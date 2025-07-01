@@ -1,7 +1,11 @@
-from rest_framework import serializers import ModelSerializer
+from rest_framework.serializers import ModelSerializer
 from .models import Review
+from users.serializers import FeedUserSerializer
 
 class ReviewSerializer(ModelSerializer):
-    class meta:
+    user = FeedUserSerializer(read_only=True)
+
+
+    class Meta:
         model = Review
         fields = "__all__"
