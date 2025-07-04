@@ -13,8 +13,6 @@ class Reviews(APIView):
 
         return Response(serializer.data)
 
-
-
 class ReviewDetail(APIView):
     def get(self, request, review_id):
         try:
